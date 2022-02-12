@@ -1,0 +1,23 @@
+@use '../base/breakpoints' as *;
+
+.stories {
+	@include media('>=tablet') {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	@media (min-width: '1024px') {
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: 650px;
+	}
+
+	@include media('>=laptop') {
+		grid-template-columns: repeat(4, 1fr);
+		grid-auto-rows: 530px;
+	}
+
+	.featuredStory {
+		grid-column: 1 / -1;
+		grid-row: 1 / 1;
+	}
+}

@@ -1,0 +1,33 @@
+@use '../base/breakpoints' as *;
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 1.5rem;
+
+	@include media('>=tablet') {
+		justify-content: space-between;
+		margin: 1rem 2.5rem;
+	}
+
+	@include media('>=laptop') {
+		justify-content: space-between;
+		margin: 1rem 8rem;
+	}
+
+	.logo {
+		height: 16px;
+
+		@include media('>=desktop') {
+			height: 20px;
+		}
+	}
+
+	.mobile-navigation-close-icon,
+	.mobile-navigation-burger-icon {
+		@include media('>=tablet') {
+			display: none;
+		}
+	}
+}

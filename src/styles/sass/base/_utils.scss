@@ -1,0 +1,51 @@
+@use '../base/breakpoints' as *;
+
+.action-arrow--white {
+	width: 42px;
+	filter: invert(100%);
+	cursor: pointer;
+}
+
+.action-arrow--black {
+	width: 42px;
+	cursor: pointer;
+}
+
+.action {
+	&--white,
+	&--black {
+		@include media('>=laptop') {
+			position: relative;
+
+			&:hover {
+				cursor: pointer;
+			}
+
+			&::after {
+				content: '';
+				position: absolute;
+				height: 1px;
+				width: 0;
+				left: 0;
+				bottom: -2px;
+				transition: 0.15s ease-out;
+			}
+
+			&:hover::after {
+				width: 100%;
+			}
+		}
+	}
+
+	&--white {
+		&::after {
+			background: white;
+		}
+	}
+
+	&--black {
+		&::after {
+			background: black;
+		}
+	}
+}

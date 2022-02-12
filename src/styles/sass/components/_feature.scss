@@ -1,0 +1,53 @@
+@use '../base/breakpoints' as *;
+
+.feature {
+	display: grid;
+	place-items: center;
+	margin: 4rem 0 0 0;
+	gap: 1rem;
+
+	@include media('>=tablet') {
+		gap: 2rem;
+	}
+
+	&-content {
+		display: grid;
+		place-items: center;
+		text-align: center;
+		width: 80%;
+
+		@include media('>=tablet') {
+			width: 85%;
+		}
+
+		@include media('>=laptop') {
+			width: 86%;
+		}
+	}
+
+	&-header {
+		font-size: 1.125rem;
+
+		@include media('>=tablet') {
+			font-size: 1.25rem;
+		}
+
+		@include media('>=desktop') {
+			font-size: 1.5rem;
+		}
+	}
+
+	&-body {
+		margin: 0;
+		font-size: 0.9375rem;
+		line-height: 1.5625rem;
+		opacity: 0.6;
+
+		@include media('>=tablet') {
+			font-size: 1rem;
+		}
+		@include media('>=desktop') {
+			font-size: 1.25rem;
+		}
+	}
+}

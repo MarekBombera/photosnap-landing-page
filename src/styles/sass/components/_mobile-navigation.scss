@@ -1,0 +1,35 @@
+@use '../base/breakpoints' as *;
+
+.mobile-navigation {
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	background: white;
+	z-index: 99;
+
+	p {
+		text-transform: uppercase;
+		font-weight: bold;
+		font-size: 0.9375rem;
+		letter-spacing: 0.156rem;
+	}
+
+	hr {
+		width: 80%;
+		opacity: 0.75;
+	}
+
+	&__invite {
+		width: 80%;
+		margin: 1rem 0 2rem;
+		text-align: center;
+		background: black;
+
+		p {
+			color: white;
+		}
+	}
+}

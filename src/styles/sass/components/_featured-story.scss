@@ -1,0 +1,183 @@
+@use '../base/breakpoints' as *;
+
+.featuredStory {
+	position: relative;
+
+	&-img {
+		height: 100%;
+		background-image: linear-gradient(
+			180deg,
+			rgba(0, 0, 0, 0.025) 0.27%,
+			rgba(0, 0, 0, 0.4) 100%
+		);
+
+		img {
+			width: 100%;
+			opacity: 1;
+
+			@include media('>=tablet') {
+				display: none;
+			}
+		}
+	}
+
+	&-content {
+		padding: 3rem 1.75rem 3.375rem;
+		color: white;
+		background: black;
+
+		@include media('>=tablet') {
+			position: absolute;
+			top: 20%;
+			width: 60%;
+			padding: 0;
+			margin-left: 2.5rem;
+			background: none;
+		}
+
+		@media (min-width: '1024px') {
+			top: 28%;
+		}
+
+		@media (min-width: '1180px') {
+			top: 32%;
+		}
+		@include media('>=laptop') {
+			top: 24%;
+			margin-left: 7rem;
+		}
+		@media (min-width: '1440px') {
+			top: 19%;
+		}
+		@include media('>=desktop') {
+			top: 21%;
+			margin-left: 7rem;
+		}
+	}
+
+	&-announce {
+		margin: 0;
+		text-transform: uppercase;
+		font-size: 0.75rem;
+		letter-spacing: 0.125rem;
+
+		@include media('>=tablet') {
+			margin-bottom: 1.5rem;
+		}
+		@include media('>=desktop') {
+			font-size: 0.9375rem;
+			letter-spacing: 0.133rem;
+		}
+	}
+
+	&-storyName {
+		margin: 1rem 0;
+		text-transform: uppercase;
+		font-size: 2rem;
+		line-height: 2.5rem;
+		letter-spacing: 0.21rem;
+
+		@include media('>=tablet') {
+			width: 60%;
+			font-size: 2.5rem;
+			line-height: 3rem;
+			letter-spacing: 0.21rem;
+		}
+
+		@include media('>=laptop') {
+			width: 40%;
+		}
+		@include media('>=desktop') {
+			font-size: 3rem;
+			line-height: 3.5rem;
+			letter-spacing: 0.25rem;
+		}
+	}
+
+	&-creator-date-wrapper {
+		display: flex;
+		gap: 0.6rem;
+		margin: 0 0 1rem;
+
+		@include media('>=laptop') {
+			margin: 1rem 0 1.5rem;
+		}
+	}
+
+	&-date {
+		margin: 0;
+		font-size: 0.8125rem;
+		opacity: 0.75;
+
+		@include media('>=desktop') {
+			font-size: 0.9375rem;
+		}
+	}
+
+	&-creator {
+		margin: 0;
+		font-size: 0.8125rem;
+
+		@include media('>=desktop') {
+			font-size: 0.9375rem;
+		}
+	}
+
+	&-storyBody {
+		margin: 0;
+		font-size: 0.9375rem;
+		line-height: 1.5625rem;
+		opacity: 0.6;
+
+		@include media('>=tablet') {
+			width: 85%;
+		}
+		@include media('>=laptop') {
+			width: 47%;
+		}
+		@include media('>=desktop') {
+			font-size: 1rem;
+		}
+	}
+
+	&-action {
+		display: flex;
+		align-items: center;
+		margin-top: 1.5rem;
+		gap: 1.25rem;
+
+		p {
+			margin: 0;
+			text-transform: uppercase;
+			font-weight: bold;
+			font-size: 0.75rem;
+			line-height: 1rem;
+			letter-spacing: 0.125rem;
+
+			@include media('>=desktop') {
+				font-size: 1rem;
+			}
+		}
+	}
+
+	&-effect {
+		@include media('>=laptop') {
+			position: absolute;
+			background: radial-gradient(
+				68.48% 68.48% at 0% 100%,
+				#ffc593 0%,
+				rgba(188, 113, 152, 0.496968) 52.36%,
+				rgba(90, 119, 255, 0.0001) 100%
+			);
+			opacity: 0;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			transition: 0.25s linear;
+
+			&--active {
+				opacity: 0.35;
+			}
+		}
+	}
+}

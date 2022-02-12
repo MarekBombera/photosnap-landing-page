@@ -1,0 +1,252 @@
+@use '../base/breakpoints' as *;
+
+.priceCard {
+	display: grid;
+	place-items: center;
+	text-align: center;
+	margin: 1rem 2rem;
+	padding: 3rem 2rem;
+
+	@media (min-width: 600px) {
+		margin: 1rem 4rem;
+	}
+
+	@include media('>=tablet') {
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 60px 90px 75px;
+		margin: 0 2rem 1.5rem;
+		padding: 2rem 2rem;
+		justify-items: start;
+
+		//Placement for parent _pricing grid-template
+		grid-column: 1 / -1;
+		grid-row: 3/3;
+	}
+
+	@include media('>=laptop') {
+		grid-template-columns: auto;
+		grid-template-rows: auto;
+		margin: 0;
+		padding: 3rem 1.75rem;
+	}
+
+	@include media('>=desktop') {
+	}
+
+	&-plan {
+		margin: 0;
+		text-transform: capitalize;
+		font-size: 1.75rem;
+
+		@include media('>=tablet') {
+			grid-column: 1 / 1;
+			grid-row: 1 / 1;
+			align-self: start;
+		}
+
+		@include media('>=tablet') {
+			justify-self: center;
+		}
+	}
+
+	&-body {
+		font-size: 0.9375rem;
+		line-height: 1.5625rem;
+		opacity: 0.6;
+
+		@include media('>=tablet') {
+			grid-column: 1 / 1;
+			grid-row: 2 / 2;
+			text-align: left;
+		}
+
+		@include media('>=tablet') {
+			text-align: center;
+		}
+	}
+
+	&-price-wrapper {
+		justify-self: center;
+
+		@include media('>=tablet') {
+			justify-self: flex-end;
+		}
+
+		@include media('>=laptop') {
+			justify-self: center;
+		}
+	}
+
+	&-price {
+		margin-bottom: 0;
+		font-size: 2.5rem;
+		letter-spacing: 0.26rem;
+
+		@include media('>=tablet') {
+			grid-column: 2 / 2;
+			grid-row: 1 / -1;
+		}
+	}
+
+	&-billing {
+		margin-top: 0;
+		font-size: 0.9375rem;
+		opacity: 0.6;
+
+		@include media('>=tablet') {
+			grid-column: 2 / 2;
+			grid-row: 1 / 2;
+			margin-right: 0.5rem;
+			text-align: right;
+		}
+
+		@include media('>=tablet') {
+			text-align: center;
+		}
+	}
+
+	&-action {
+		margin: 2rem 0 0;
+		padding: 0.75rem 0;
+		text-transform: uppercase;
+		font-weight: bold;
+		font-size: 0.75rem;
+		letter-spacing: 0.125rem;
+		width: 100%;
+
+		@include media('>=tablet') {
+			grid-column: 1 / 1;
+			grid-row: 3 / 3;
+			align-self: flex-end;
+			margin: 0;
+		}
+
+		@include media('>=tablet') {
+			grid-row: 4 / 4;
+			align-self: flex-end;
+			margin: 0;
+		}
+	}
+
+	&__normal {
+		background: rgb(245, 245, 245);
+		box-shadow: 0 5px 20px 0px rgb(0, 0, 0, 0.2);
+
+		&-action {
+			color: rgb(255, 255, 255);
+			background: rgb(0, 0, 0);
+
+			&:hover {
+				cursor: pointer;
+				color: black;
+				background: #dfdfdf;
+			}
+		}
+
+		&-basic {
+			@include media('>=tablet') {
+				//Placement for parent _pricing grid-template
+				grid-column: 1 / -1;
+				grid-row: 3/3;
+			}
+
+			@include media('>=laptop') {
+				//Placement for parent _pricing grid-template
+				grid-column: 3 / 6;
+			}
+
+			@include media('>=desktop') {
+				//Placement for parent _pricing grid-template
+				grid-column: 4 / 7;
+			}
+		}
+
+		&-business {
+			@include media('>=tablet') {
+				//Placement for parent _pricing grid-template
+				grid-column: 1 / -1;
+				grid-row: 5/5;
+			}
+
+			@include media('>=laptop') {
+				//Placement for parent _pricing grid-template
+				grid-column: 11 / 14;
+				grid-row: 3/3;
+			}
+
+			@include media('>=desktop') {
+				//Placement for parent _pricing grid-template
+				grid-column: 12 / 15;
+			}
+		}
+	}
+
+	&__pro {
+		position: relative;
+		color: rgb(255, 255, 255);
+		background: rgb(0, 0, 0);
+		box-shadow: 0 5px 20px 0px rgb(0, 0, 0, 0.5);
+
+		@include media('>=tablet') {
+			//Placement for parent _pricing grid-template
+			grid-column: 1 / -1;
+			grid-row: 4/4;
+
+			border-left: 6px solid transparent;
+			border-image: linear-gradient(
+				to bottom right,
+				rgb(90, 119, 255),
+				rgb(188, 113, 152),
+				rgb(255, 197, 147),
+				rgb(255, 197, 147),
+				rgb(255, 197, 147)
+			);
+			border-image-slice: 1;
+		}
+
+		@include media('>=laptop') {
+			//Placement for parent _pricing grid-template
+			grid-column: 7 / 10;
+			grid-row: 3/3;
+			padding: 3rem 1.75rem;
+			border: none;
+			transform: scale(1.1);
+		}
+
+		@include media('>=desktop') {
+			//Placement for parent _pricing grid-template
+			grid-column: 8 / 11;
+		}
+
+		&-action {
+			color: rgb(0, 0, 0);
+			background: rgb(255, 255, 255);
+
+			&:hover {
+				cursor: pointer;
+				background: #dfdfdf;
+			}
+		}
+	}
+
+	.decoration-hr {
+		position: absolute;
+		top: 0;
+		width: 100%;
+		border: none;
+		height: 0.375rem;
+		background: linear-gradient(
+			to top right,
+			rgb(255, 197, 147),
+			rgb(188, 113, 152),
+			rgb(90, 119, 255)
+		);
+
+		@include media('>=tablet') {
+			display: none;
+		}
+		@include media('>=laptop') {
+			display: block;
+		}
+	}
+}

@@ -1,0 +1,84 @@
+@use '../base/breakpoints' as *;
+
+.pricingFeatures {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	padding: 1rem 0;
+	border-bottom: 1px solid rgb(223, 223, 223);
+
+	@include media('>=tablet') {
+		grid-template-columns: repeat(5, 1fr);
+		align-items: center;
+	}
+
+	&-feature {
+		grid-column: 1 / -1;
+		grid-row: 1/1;
+		margin: 0 0 0.5rem;
+		text-transform: uppercase;
+		font-weight: bold;
+		font-size: 0.75rem;
+		letter-spacing: 0.125rem;
+
+		@include media('>=tablet') {
+			margin: 0;
+		}
+
+		@include media('>=desktop') {
+			font-size: 0.75rem;
+			letter-spacing: 0.125rem;
+		}
+	}
+
+	&-basic {
+		grid-column: 1 / 1;
+		grid-row: 2/2;
+
+		@include media('>=tablet') {
+			justify-self: center;
+			grid-column: 3 / 4;
+			grid-row: 1 / 1;
+		}
+	}
+	&-pro {
+		grid-column: 2 / 2;
+		grid-row: 2/2;
+
+		@include media('>=tablet') {
+			justify-self: center;
+			grid-column: 4 / 5;
+			grid-row: 1 / 1;
+		}
+	}
+	&-business {
+		grid-column: 3 / 3;
+		grid-row: 2/2;
+
+		@include media('>=tablet') {
+			justify-self: center;
+			grid-column: 5 / 6;
+			grid-row: 1 / 1;
+		}
+	}
+
+	&-basic,
+	&-pro,
+	&-business {
+		p {
+			text-transform: uppercase;
+			font-weight: bold;
+			font-size: 0.625rem;
+			letter-spacing: 0.1rem;
+			opacity: 0.5;
+
+			@include media('>=tablet') {
+				display: none;
+			}
+		}
+
+		img {
+			width: 16px;
+			height: 12px;
+		}
+	}
+}

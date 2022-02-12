@@ -1,0 +1,156 @@
+@use '../base/breakpoints' as *;
+
+.footer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 3rem 0;
+	gap: 1.75rem;
+	background: black;
+
+	@include media('>=tablet') {
+		flex-direction: row;
+		justify-content: space-between;
+		padding: 3.5rem 3rem;
+	}
+
+	@include media('>=laptop') {
+		padding: 4rem 7rem;
+	}
+
+	@include media('>=desktop') {
+		padding: 5rem 7rem;
+	}
+
+	&__wrapper-1 {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+
+		@include media('>=tablet') {
+		}
+	}
+
+	&__wrapper-2 {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		@include media('>=tablet') {
+			gap: 7.8rem;
+			align-items: flex-end;
+		}
+	}
+
+	&__logo {
+		img {
+			@include media('>=desktop') {
+				height: 20px;
+			}
+		}
+	}
+
+	&__content {
+		@include media('>=tablet') {
+			display: flex;
+			flex-direction: column-reverse;
+			gap: 5rem;
+		}
+
+		@include media('>=laptop') {
+			display: flex;
+			flex-direction: column-reverse;
+			gap: 5rem;
+		}
+	}
+
+	&__social {
+		display: flex;
+		gap: 0.75rem;
+
+		&:hover {
+			cursor: pointer;
+		}
+
+		img {
+			filter: invert(100%) sepia(100%) saturate(0%) brightness(1000%)
+				contrast(101%);
+			&:hover {
+				filter: none;
+			}
+
+			@include media('>=desktop') {
+				width: 25px;
+			}
+		}
+	}
+
+	&__navigation {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin: 2rem 0 5rem;
+		gap: 1.25rem;
+
+		@include media('>=tablet') {
+			flex-direction: row;
+			margin: 0;
+		}
+
+		p {
+			margin: 0;
+			text-transform: uppercase;
+			font-weight: bold;
+			font-size: 0.75rem;
+			letter-spacing: 0.125rem;
+			color: white;
+
+			@include media('>=laptop') {
+				font-size: 0.8rem;
+			}
+
+			@include media('>=desktop') {
+				font-size: 1rem;
+				letter-spacing: 0.15rem;
+			}
+		}
+	}
+
+	&__invite {
+		display: flex;
+		align-items: center;
+		gap: 1.25rem;
+
+		@include media('>=tablet') {
+			justify-content: flex-end;
+		}
+
+		p {
+			text-transform: uppercase;
+			font-weight: bold;
+			font-size: 0.75rem;
+			letter-spacing: 0.125rem;
+			color: white;
+
+			@include media('>=tablet') {
+				margin: 0;
+			}
+
+			@include media('>=desktop') {
+				font-size: 1rem;
+			}
+		}
+	}
+
+	&__copyright {
+		p {
+			margin: 0;
+			font-size: 0.9375rem;
+			color: rgb(255, 255, 255, 0.5);
+
+			@include media('>=desktop') {
+				font-size: 1rem;
+			}
+		}
+	}
+}

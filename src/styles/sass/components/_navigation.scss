@@ -1,0 +1,116 @@
+@use '../base/breakpoints' as *;
+
+.NavLink {
+	&--no-default-style {
+		text-decoration: none;
+		color: black;
+	}
+}
+
+.logo {
+	@include media('>=desktop') {
+	}
+}
+
+.navigation {
+	display: flex;
+	justify-content: space-between;
+
+	p {
+		position: relative;
+		text-transform: uppercase;
+		font-weight: bold;
+		font-size: 0.75rem;
+		letter-spacing: 0.125rem;
+
+		@include media('>=laptop') {
+			font-size: 0.8rem;
+			transition: 0.15s ease-out;
+
+			&:hover {
+				color: #9c9c9c;
+			}
+
+			&::after {
+				content: '';
+				position: absolute;
+				background-color: black;
+				height: 2px;
+				width: 0;
+				left: 0;
+				bottom: -3px;
+				width: 100%;
+				opacity: 0;
+				transition: opacity 300ms, transform 300ms;
+			}
+
+			&:hover::after,
+			&:focus::after {
+				opacity: 1;
+				transform: translate3d(0, 0.2em, 0);
+			}
+		}
+
+		@include media('>=desktop') {
+			font-size: 1rem;
+			letter-spacing: 0.15rem;
+		}
+	}
+
+	&__NavLinks {
+		display: flex;
+		gap: 2.5rem;
+	}
+
+	&__invite {
+		background: rgb(0, 0, 0, 1);
+		p {
+			position: relative;
+			margin: 0;
+			padding: 0.75rem 1.5rem;
+			text-transform: uppercase;
+			font-weight: bold;
+			font-size: 0.75rem;
+			letter-spacing: 0.125rem;
+			color: white;
+			z-index: 1;
+
+			@include media('>=laptop') {
+				transition: 0.25s linear;
+
+				&:hover {
+					color: rgb(20, 20, 20);
+					cursor: pointer;
+				}
+
+				&::before {
+					position: absolute;
+					content: '';
+					top: 0;
+					right: 0;
+					bottom: 0;
+					left: 0;
+					color: black;
+					background: linear-gradient(
+						to top right,
+						rgb(255, 197, 147, 1),
+						rgb(188, 113, 152, 1),
+						rgb(90, 119, 255, 1)
+					);
+					z-index: -1;
+					transition: opacity 0.25s linear;
+					opacity: 0;
+				}
+
+				&:hover::before {
+					opacity: 1;
+				}
+			}
+
+			@include media('>=desktop') {
+				font-size: 1rem;
+				letter-spacing: 0.15rem;
+			}
+		}
+	}
+}
