@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="170" height="16" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="a" x1="0%" x2="50%" y1="85.457%" y2="14.543%">
+      <stop offset="0" stop-color="#FFC593"/>
+      <stop offset="0.5195" stop-color="#BC7198"/>
+      <stop offset="1" stop-color="#5A77FF"/>
+    </linearGradient>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <path fill="url(#a)" d="M0 16L9.5 0 19 16z"/>
+  </g>
+</svg>
