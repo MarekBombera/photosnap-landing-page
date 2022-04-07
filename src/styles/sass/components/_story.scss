@@ -4,7 +4,7 @@
 	position: relative;
 	z-index: 2;
 
-	@include media('>=desktop') {
+	@include media('>=laptop') {
 		transition: 0.15s ease-out;
 
 		&:hover {
