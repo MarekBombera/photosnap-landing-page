@@ -1,5 +1,5 @@
-import { useMediaQueryMatch } from '../../hooks/useMediaQueryMatch/useMediaQueryMatch';
 import { useState } from 'react';
+import { useMediaQueryMatch } from '../../hooks/useMediaQueryMatch/useMediaQueryMatch';
 
 import arrow from '../../assets/shared/desktop/arrow.svg';
 
@@ -24,12 +24,8 @@ export const FeaturedStory = ({
 }: props): JSX.Element => {
 	const [showEffect, setShowEffect] = useState<boolean>(false);
 
-	const handleMouseEnter = (): void => {
-		setShowEffect(true);
-	};
-
-	const handleMouseLeave = (): void => {
-		setShowEffect(false);
+	const toggleShowEffect = (): void => {
+		setShowEffect(showEffect);
 	};
 
 	const showColorEffectOnHover = (): string => {
@@ -51,8 +47,8 @@ export const FeaturedStory = ({
 			<div className="featuredStory-action">
 				<p
 					className="action--white"
-					onMouseEnter={handleMouseEnter}
-					onMouseLeave={handleMouseLeave}
+					onMouseEnter={toggleShowEffect}
+					onMouseLeave={toggleShowEffect}
 				>
 					Read the Story
 				</p>

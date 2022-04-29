@@ -5,9 +5,8 @@ import { Spinner } from '../../components/Spinner/Spinner';
 export const Beta = (): JSX.Element => {
 	betaMediaQueryImages();
 
-	if (queriedImages === undefined) {
-		return <Spinner />;
-	}
+	if (queriedImages === undefined) return <Spinner />;
+
 	const { beta_img } = queriedImages;
 
 	return (
@@ -18,7 +17,6 @@ export const Beta = (): JSX.Element => {
 			</div>
 			<div className="beta-content">
 				<h3 className="beta-header">We’re in beta. Get your invite today!</h3>
-
 				<div className="beta-action">
 					<p className="action--white">get an invite</p>
 					<img className="action-arrow--white" src={arrow} alt="" />

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { PricingFeatures } from '../../components/PricingFeatures/PricingFeatures';
 import { PriceCard } from '../../components/PriceCard/PriceCard';
 import { Beta } from '../../components/Beta/Beta';
 import { Spinner } from '../../components/Spinner/Spinner';
@@ -6,16 +7,13 @@ import {
 	pricingMediaQueryImages,
 	queriedImages,
 } from './pricingMediaQueryImages';
-import { PricingFeatures } from '../../components/PricingFeatures/PricingFeatures';
 
 export const Pricing = (): JSX.Element => {
 	const [yearlyPlan, setYearlyPlan] = useState<boolean>(false);
 
 	pricingMediaQueryImages();
 
-	if (queriedImages === undefined) {
-		return <Spinner />;
-	}
+	if (queriedImages === undefined) return <Spinner />;
 
 	const handleCheckbox = (): void => {
 		setYearlyPlan(!yearlyPlan);

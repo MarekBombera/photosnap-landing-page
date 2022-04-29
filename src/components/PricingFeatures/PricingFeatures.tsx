@@ -15,11 +15,8 @@ export const PricingFeatures = ({
 	business,
 	classGrid,
 }: props): JSX.Element => {
-	const showCheckImg = (plan: boolean): string | JSX.Element => {
-		if (plan) {
-			return <img src={check_img} alt="check" />;
-		}
-		return '';
+	const showCheckImg = (plan: boolean): JSX.Element | string => {
+		return plan ? <img src={check_img} alt="check" /> : '';
 	};
 
 	return (

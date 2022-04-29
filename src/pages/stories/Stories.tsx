@@ -10,9 +10,8 @@ import {
 export const Stories = (): JSX.Element => {
 	storiesMediaQueryImages();
 
-	if (queriedImages === undefined) {
-		return <Spinner />;
-	}
+	if (queriedImages === undefined) return <Spinner />;
+
 	const { featuredStory, story } = queriedImages;
 
 	return (

@@ -10,9 +10,7 @@ export const MobileNavigation = ({
 	openMobileMenu,
 	toggleMobileMenu,
 }: props): JSX.Element => {
-	if (!openMobileMenu) {
-		return <div></div>;
-	}
+	if (!openMobileMenu) return <div></div>;
 
 	const domNodeRef = useClickOutside(() => {
 		setTimeout(() => {

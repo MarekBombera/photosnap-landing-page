@@ -14,17 +14,11 @@ export const PriceCard = ({
 	yearlyPlan,
 }: props): JSX.Element => {
 	const handleBillingPeriod = (): string => {
-		if (!yearlyPlan) {
-			return 'per month';
-		}
-		return 'per year';
+		return !yearlyPlan ? 'per month' : 'per year';
 	};
 
 	const handleBillingPrice = (price: string): string => {
-		if (!yearlyPlan) {
-			return price;
-		}
-		return `${price}0`;
+		return !yearlyPlan ? price : `${price}0`;
 	};
 
 	return (

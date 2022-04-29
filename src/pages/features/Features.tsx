@@ -17,9 +17,8 @@ import {
 export const Features = (): JSX.Element => {
 	featuresMediaQueryImages();
 
-	if (queriedImages === undefined) {
-		return <Spinner />;
-	}
+	if (queriedImages === undefined) return <Spinner />;
+
 	const { hero } = queriedImages;
 	return (
 		<div className="features" role="features">
