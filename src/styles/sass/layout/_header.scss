@@ -16,6 +16,11 @@
 		margin: 1rem 8rem;
 	}
 
+	@include media('>=desktop') {
+		justify-content: space-between;
+		padding: 0.5rem 0;
+	}
+
 	.logo {
 		height: 16px;
 

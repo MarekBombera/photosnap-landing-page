@@ -76,7 +76,7 @@
 			z-index: 1;
 
 			@include media('>=laptop') {
-				transition: 0.25s linear;
+				transition: all 0.25s linear;
 
 				&:hover {
 					color: rgb(20, 20, 20);

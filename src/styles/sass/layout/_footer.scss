@@ -73,6 +73,7 @@
 		}
 
 		img {
+			
 			filter: invert(100%) sepia(100%) saturate(0%) brightness(1000%)
 				contrast(101%);
 			&:hover {
@@ -123,6 +124,10 @@
 
 		@include media('>=tablet') {
 			justify-content: flex-end;
+		}
+
+		@include media('>=laptop') {
+			cursor: pointer;
 		}
 
 		p {

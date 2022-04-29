@@ -42,11 +42,10 @@
 			grid-column: 1 / 1;
 			grid-row: 1 / 1;
 			align-self: start;
-		}
-
-		@include media('>=tablet') {
 			justify-self: center;
 		}
+
+
 	}
 
 	&-body {
@@ -121,10 +120,14 @@
 			margin: 0;
 		}
 
-		@include media('>=tablet') {
+		@include media('>=laptop') {
 			grid-row: 4 / 4;
 			align-self: flex-end;
 			margin: 0;
+		}
+
+		@include media('>=laptop') {
+			transition: all 0.25s ease-out;
 		}
 	}
 
@@ -224,7 +227,8 @@
 
 			&:hover {
 				cursor: pointer;
-				background: #dfdfdf;
+				background: #5f5f5f;
+				color:white;
 			}
 		}
 	}

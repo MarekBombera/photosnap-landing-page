@@ -10,13 +10,13 @@ import arrow from '../../assets/shared/desktop/arrow.svg';
 import responsive_img from '../../assets/features/desktop/responsive.svg';
 import no_limit_img from '../../assets/features/desktop/no-limit.svg';
 import embed_img from '../../assets/features/desktop/embed.svg';
+import { NavLink } from 'react-router-dom';
 
 export const Homepage = (): JSX.Element => {
 	homepageMediaQueryImages();
 
-	if (queriedImages === undefined) {
-		return <Spinner />;
-	}
+	if (queriedImages === undefined) return <Spinner />;
+
 	const { homepage, story } = queriedImages;
 
 	return (
@@ -51,10 +51,12 @@ export const Homepage = (): JSX.Element => {
 					Easily add photos, text, embed maps and media from other networks.
 					Then share your story with everyone.
 				</p>
-				<div className="homepage__createShare-content-action">
-					<p className="action--black">view the stories</p>
-					<img className="action-arrow--black" src={arrow} alt="" />
-				</div>
+				<NavLink to="/stories" className="NavLink--no-default-style">
+					<div className="homepage__createShare-content-action">
+						<p className="action--black">view the stories</p>
+						<img className="action-arrow--black" src={arrow} alt="" />
+					</div>
+				</NavLink>
 			</section>
 
 			<div className="homepage__designedForEveryone-img">
@@ -69,10 +71,12 @@ export const Homepage = (): JSX.Element => {
 					audience. Our tool is designed for photographers of all levels,
 					brands, businesses you name it.
 				</p>
-				<div className="homepage__createShare-content-action">
-					<p className="action--black">view the stories</p>
-					<img className="action-arrow--black" src={arrow} alt="" />
-				</div>
+				<NavLink to="/stories" className="NavLink--no-default-style">
+					<div className="homepage__createShare-content-action">
+						<p className="action--black">view the stories</p>
+						<img className="action-arrow--black" src={arrow} alt="" />
+					</div>
+				</NavLink>
 			</section>
 
 			<Story

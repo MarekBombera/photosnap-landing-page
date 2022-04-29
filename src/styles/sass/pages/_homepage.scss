@@ -10,11 +10,11 @@
 	@include media('>=laptop') {
 		justify-items: center;
 		grid-template-columns: repeat(12, 1fr);
-		grid-template-rows: 650px 600px 600px 500px;
+		grid-template-rows: 640px 600px 600px 500px;
 	}
 
 	@include media('>=desktop') {
-		grid-template-rows: 850px 800px 800px 600px;
+		grid-template-rows: 830px 800px 800px 600px;
 	}
 
 	&__createShare {
@@ -293,6 +293,10 @@
 				margin-bottom: 4rem;
 				width: 100%;
 			}
+
+			@include media('>=desktop') {
+				margin: 6rem 0;
+			}
 		}
 
 		&-2 {
@@ -310,6 +314,10 @@
 				margin-bottom: 4rem;
 				width: 100%;
 			}
+
+			@include media('>=desktop') {
+				margin: 6rem 0;
+			}
 		}
 
 		&-3 {
@@ -325,6 +333,9 @@
 				grid-column: 8 / span 3;
 				grid-row: 7/7;
 				width: 100%;
+			}
+			@include media('>=desktop') {
+				margin: 6rem 0;
 			}
 		}
 	}
